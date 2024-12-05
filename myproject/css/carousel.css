@@ -42,7 +42,7 @@
 
 #banner .content-slider .slider .banner .banner-inner-wrapper {
     height: 100%;
-    padding-top: 20vh; /* 6em 改製 */
+    padding-top: 25vh; /* 6em 改製 */
     background-image: linear-gradient(rgba(121, 77, 144, 0.9), rgba(252, 227, 138, 0.9));
     box-sizing: border-box;
 }

@@ -1,21 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Galada&family=Kaushan+Script&family=LXGW+WenKai+Mono+TC&&family=Kaushan+Script&+TC&family=Montserrat&display=swap');
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
     margin: 0;
     padding: 0;
     border: 0;
-	font-size: 100%;
+    font-size: 100%;
 }
 
 * {
@@ -24,20 +93,29 @@ time, mark, audio, video {
 
 body {
     font-family:
-    /*西文*/ -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial,
-    /*中文*/ "蘋方-繁", "PingFang TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
-    font-optical-sizing: auto; /* 光學尺寸 */
+        /*西文*/
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial,
+        /*中文*/
+        "蘋方-繁", "PingFang TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+    font-optical-sizing: auto;
+    /* 光學尺寸 */
     line-height: 1.2;
 }
 
 /* 重置標題字重 */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-weight: normal;
 }
 
 /* 重置清單符號 */
-ol, ul {
-	list-style: none;
+ol,
+ul {
+    list-style: none;
 }
 
 /* 重置圖片 */
@@ -48,13 +126,59 @@ img {
 
 /* 重置連接 */
 a {
-    display: block; /* 將a預設inline改為block，才能設定間距及寬高 */
+    display: block;
+    /* 將a預設inline改為block，才能設定間距及寬高 */
     color: #222;
     text-decoration: none;
 }
 
+/* 頁首區 */
+#topbar {
+    /* 固定視窗 */
+    position: fixed;
+    top: 0;
+    left: 0;
 
-/* 卷軸樣式 */ 
+    width: 100%;
+    /* position的寬度會改為自動抓內容尺寸 */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px 50px;
+}
+
+#topbar .logo {
+    width: 65px;
+}
+
+/* menu 欄位 */
+#topbar .navigation .menu {
+    /* font-family: 'Kaushan Script', cursive; */
+    font-family: Montserrat, sans-serif;
+    display: flex;
+    border-radius: 50px;
+    padding: 0 10px;
+    margin-top: 10px;
+}
+
+#topbar .navigation .menu a {
+    margin: 10px;
+    padding: 7px 0 5px;
+    border-bottom: 2px solid transparent;
+    text-shadow: 0 0 2px rgba(255, 255, 255, 0.3);
+    transition: 0.4s;
+}
+
+#topbar .navigation .menu a:hover {
+    border-bottom: 2px solid #666;
+    color: #444;
+}
+
+
+
+
+
+/* 卷軸樣式 */
 /* ::-webkit-scrollbar {
     width: 12px;
     background-color: $lesser-1;
