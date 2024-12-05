@@ -161,7 +161,7 @@ a {
     margin-top: 10px;
 }
 
-#topbar .navigation .menu a {
+ .navigation .menu a {
     margin: 10px;
     padding: 7px 0 5px;
     border-bottom: 2px solid transparent;
