@@ -1,0 +1,8 @@
+@use'../variables/'as*;
+// 匯入變數不可於index.css中匯入
+@mixin border-b ($width:2px,$color:$primary-green){
+    border: $width solid $color;
+}
+@mixin bordered($width:1px,$primary-green){
+    border: $width dashed $color;
+}

@@ -1,14 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 遷入 CSS -->
+
+    <!-- Code Pen 這裡可以再連結sass的套件檔案  -->
+    <link rel="stylesheet" href="./css/carousel.css">
+
+    <!-- 自訂的CSS權重要最大，一定要放在最下面 -->
     <link rel="stylesheet" href="./style.css">
     <title>靜態網頁</title>
 </head>
+
 <body>
-    <!-- 換圖輪播功能一 -->
-    
+    <main>
+        <!-- banner 區換圖輪播功能一 -->
+        <section id="banner">
+            <div class="content-slider">
+                <!-- 張數提示(點點) -->
+                <input type="radio" id="banner1" class="sec-1-input" name="banner" checked>
+                <input type="radio" id="banner2" class="sec-1-input" name="banner">
+                <input type="radio" id="banner3" class="sec-1-input" name="banner">
+                <input type="radio" id="banner4" class="sec-1-input" name="banner">
+                <input type="radio" id="banner5" class="sec-1-input" name="banner">
+                <!-- 主圖輪播區 -->
+                <div class="slider">
+                    <div id="top-banner-1" class="banner">
+                        <div class="banner-inner-wrapper">
+                            <h2>Creative Template</h2>
+                            <h1>Welcome<br>to MoGo</h1>
+                            <div class="line"></div>
+                            <div class="learn-more-button"><a href="#section-2">Learn More</a></div>
+                        </div>
+                    </div>
+                    <div id="top-banner-2" class="banner">
+                        <div class="banner-inner-wrapper">
+                            <h2>What We Do</h2>
+                            <h1>Great<br>MoGo</h1>
+                            <div class="line"></div>
+                            <div class="learn-more-button"><a href="#section-4">Learn More</a></div>
+                        </div>
+                    </div>
+                    <div id="top-banner-3" class="banner">
+                        <div class="banner-inner-wrapper">
+                            <h2>Here We Are</h2>
+                            <h1>We Are<br>MoGo</h1>
+                            <div class="line"></div>
+                            <div class="learn-more-button"><a href="#section-6">Learn More</a></div>
+                        </div>
+                    </div>
+                    <div id="top-banner-4" class="banner">
+                        <div class="banner-inner-wrapper">
+                            <h2>Our Contacts</h2>
+                            <h1>Welcome<br>to MoGo</h1>
+                            <div class="line"></div>
+                            <div class="learn-more-button"><a href="#main-footer">Learn More</a></div>
+                        </div>
+                    </div>
+                    <div id="top-banner-5" class="banner">
+                        <div class="banner-inner-wrapper">
+                            <h2>HI Flower</h2>
+                            <h1>Welcome<br>to flower</h1>
+                            <div class="line"></div>
+                            <div class="learn-more-button"><a href="#main-footer">Learn More</a></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 底部按鈕區 -->
+                <nav>
+                    <div class="controls">
+                        <label for="banner1"><span class="progressbar"><span
+                                    class="progressbar-fill"></span></span><span>01</span> Intro</label>
+                        <label for="banner2"><span class="progressbar"><span
+                                    class="progressbar-fill"></span></span><span>02</span> Work</label>
+                        <label for="banner3"><span class="progressbar"><span
+                                    class="progressbar-fill"></span></span><span>03</span> About</label>
+                        <label for="banner4"><span class="progressbar"><span
+                                    class="progressbar-fill"></span></span><span>04</span> Contacts</label>
+                        <label for="banner5"><span class="progressbar"><span
+                                    class="progressbar-fill"></span></span><span>05</span> Contacts</label>
+                    </div>
+                </nav>
+            </div>
+        </section>
+    </main>
+
+    <!-- jQuery 原生碼 CON 一定要放在最上面，讓瀏覽器先讀取，才能抓到定義的函示庫 -->
+    <!-- jQuery cdn -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- 套件:換圖輪播js -->
+    <script src="./js/carousel.js"></script>
+
 </body>
+
 </html>
