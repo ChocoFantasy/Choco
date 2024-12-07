@@ -6,23 +6,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>jQuery 方法</title>
     <style>
-        
+        .boxs {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box1 {
+            background-color: rgb(130, 194, 173);
+            display: none;
+        }
+
+        .box2 {
+            background-color: rgb(232, 176, 116);
+        }
+
+        .box3 {
+            background-color: rgb(155, 232, 111);
+        }
+
+        .box4 {
+            background-color: rgb(197, 61, 212);
+        }
+
+        .animate {
+            width: 100%;
+        }
+
+        .box5 {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin-top: 20px;
+        }
     </style>
 </head>
 
 <body>
-    <P>append:在元素結尾加入內容方法</P>
+    <P>功能一：append:在元素結尾加入內容方法</P>
     <button class="btn1">Click</button>
     <h2 class="btn1-h2">原本的內容：</h2>
 
     <br>
 
-    <P>fade:淡出淡入效果</P>
-    <button class="btn2">Click</button>
-    <div class="box1">fade-in</div>
-    <div class="box2">fade-OUT</div>
-    <div class="box3">fade-Toggle</div>
-    <div class="box4">fade-TO</div>
+    <div class="boxs">
+        <P>功能二：fade:淡出淡入效果</P>
+        <button class="btn2">Click</button>
+        <div class="box1">fade-in移入</div>
+        <div class="box2">fade-OUT移出</div>
+        <div class="box3">fade-Toggle淡出</div>
+        <div class="box4">fade-TO淡掉</div>
+    </div>
+
+    <div class="animate">
+        <P>功能三：animate:動畫效果</P>
+        <button class="btn3">增高</button>
+        <button class="btn4">還原</button>
+        <div class="box5"></div>
+    </div>
 
     <!-- jQuery 原生碼 -->
     <script src="./jquery-3.7.1.min.js"></script>
@@ -35,11 +84,34 @@
         // .click() -> 偵測元素 'click'動作
         // .append() -> 'append' 動作為在元素結尾加入內容
 
+        // 功能1：結尾加入內容方法 
         $(function () {
             // 取得元素
-            $(".btn1").click(function(){
+            $(".btn1").click(function () {
                 // 做甚麼動作
                 $(".btn1-h2").append('成功加入 append 文字內容');
+            });
+        });
+
+        // 功能2：用 jquery 使用 fade 去寫 CSS 樣式 
+        $(function () {
+            $(".btn2").click(function () {
+                $(".box1").fadeIn('fast');
+                $(".box2").fadeOut('slow');
+                $(".box3").fadeToggle(2000);
+                $(".box4").fadeTo('', 0.3);
+            });
+        });
+
+        // 功能3:動畫效果"增高、還原"
+        $(function () {
+
+            $(".btn3").click(function () {
+                $(".box5").animate({height:'300px'},2000);
+            });
+
+            $(".btn4").click(function () {
+                $(".box5").animate({height:'200px'});
             });
         });
     </script>

@@ -148,7 +148,7 @@ a {
 }
 
 #topbar .logo {
-    width: 65px;
+    width: 50px;
 }
 
 /* menu 欄位 */
@@ -161,7 +161,7 @@ a {
     margin-top: 10px;
 }
 
- .navigation .menu a {
+#topbar .navigation .menu a {
     margin: 10px;
     padding: 7px 0 5px;
     border-bottom: 2px solid transparent;
@@ -239,7 +239,7 @@ a {
     transform: rotate(-45deg) translateY(-11px);
   }
   
-  .navigation {
+  .navbar .navigation {
     display: none;
     flex-direction: column;
     align-items: center;
@@ -247,7 +247,7 @@ a {
     border-radius: 15px;
     animation: hide 0.35s both;
   }
-  .navigation.show {
+  .navbar .navigation.show {
     display: flex;
     animation: show 0.35s both;
   }
@@ -267,22 +267,22 @@ a {
     to   { opacity: 1; }
   }
   
-  .menu {
+  .navbar .menu {
     display: flex;
     flex-direction: column;
     padding: 20px 30px;
     border-radius: 15px;
   }
-  .menu a {
+  .navbar .menu a {
     color: white;
     margin: 20px;
   }
-  .icon {
+  .navbar .icon {
     display: flex;
     order: 1;
     padding: 15px;
   }
-  .icon a {
+  .navbar .icon a {
     width: 35px;
     margin: 0 5px;
   }
