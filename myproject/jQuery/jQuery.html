@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 方法</title>
+    <style>
+        
+    </style>
+</head>
+
+<body>
+    <P>append:在元素結尾加入內容方法</P>
+    <button class="btn1">Click</button>
+    <h2 class="btn1-h2">原本的內容：</h2>
+
+    <br>
+
+    <P>fade:淡出淡入效果</P>
+    <button class="btn2">Click</button>
+    <div class="box1">fade-in</div>
+    <div class="box2">fade-OUT</div>
+    <div class="box3">fade-Toggle</div>
+    <div class="box4">fade-TO</div>
+
+    <!-- jQuery 原生碼 -->
+    <script src="./jquery-3.7.1.min.js"></script>
+    <!-- jQuery 語法 -->
+    <script>
+
+        // $(); -> $(document).ready
+        // function(){} -> 一個步驟一個函式
+        // $('button'); -> 取得'button'標籤元素
+        // .click() -> 偵測元素 'click'動作
+        // .append() -> 'append' 動作為在元素結尾加入內容
+
+        $(function () {
+            // 取得元素
+            $(".btn1").click(function(){
+                // 做甚麼動作
+                $(".btn1-h2").append('成功加入 append 文字內容');
+            });
+        });
+    </script>
+</body>
+
+</html>
