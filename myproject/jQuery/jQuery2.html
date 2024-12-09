@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- jQuery 原生碼 -->
+    <script src="./jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <h1>非前端框架下的 jQuery 使用</h1>
+    <hr>
+    <div>
+        <p>被點選的段落，會被隱藏</p>
+        <p>Click1</p>
+        <p>Click2</p>
+        <hr>
+        <p id="hideshow">顯示與隱藏</p>
+        <button id="hide">隱藏</button>
+        <button id="show">顯示</button>
+        <button id="toggle">雙向</button>
+        <hr>
+        <button id="btn1">常見問題：1+1等於?</button>
+        <button id="btn2">雙向:展開摺疊</button>
+        <div id="panel" style="display: none;background-color: aqua;height:100px;padding:10px;">A：答案是２喔</div>
+        <hr>
+        <!-- 最新消息列表 -->
+        <p>最新消息列表</p>
+        <div id="box-1">
+            <button id="btn3">ALTER《搖曳露營Δ》志摩凜with三輪機車1/10比例模型開訂</button>
+            <div class="div-news1">日本模型公司 ALTER 今（6）日推出《搖曳露營△》志摩凜 with 三輪機車 1/10 比例模型，預計於 2025 年 11 月發售。</div>
+        </div>
+        <div id="box-2">
+            <button id="btn4">《絕區零》1.4前瞻「星見雅」登入即送S級「淺羽悠真」</button>
+            <div class="div-news2">米哈遊團隊披露預告 1.4 版本登入好禮可免費領取 S 級代理人「淺野悠真」</div>
+        </div>
+        <hr>
+        <!-- animate -->
+
+        <button id="up">上</button>
+        <button id="down">下</button>
+        <button id="left">左</button>
+        <button id="right">右</button>
+        <button id="big">放大</button>
+        <button id="small">縮小</button>
+        <button id="bigsmall">常見問題</button>
+        <button id="changecolor">變色</button>
+
+        <div class="box-3">問題答案</div>
+
+        <style>
+            #box-1,
+            #box-2 {
+                display: flex;
+            }
+
+            #box-1 .btn3 {
+                font-size: 16px;
+                display: flex;
+                flex-direction: column;
+                cursor: pointer;
+                margin-top: 1px;
+                width: 30%;
+            }
+
+            #box-2 .btn4 {
+                font-size: 16px;
+                display: flex;
+                flex-direction: column;
+                cursor: pointer;
+                margin-top: 1px;
+                width: 30%;
+            }
+
+            #box-1 .div-news1 {
+                display: none;
+                background-color: #333;
+                color: antiquewhite;
+                font-size: 14px;
+                height: 150px;
+                padding: 10px;
+            }
+
+            #box-2 .div-news2 {
+                display: none;
+                background-color: #333;
+                color: antiquewhite;
+                font-size: 14px;
+                height: 150px;
+                padding: 10px;
+            }
+
+            .box-3 {
+                width: 100px;
+                height: 100px;
+                margin-top: 30px;
+                background-color: blueviolet;
+                position: absolute;
+                /* 移動元素必須設定 position */
+                transform: scale(1.2);
+            }
+        </style>
+    </div>
+
+    <script>
+        // 動畫:上下左右
+        $(function () {
+            $('#up').click(function () {
+                $('.box-3').animate({ top: "100px" }, 500);
+            });
+
+            $('#down').click(function () {
+                $('.box-3').animate({ Bottom: "100px" }, 500);
+            });
+
+            $('#right').click(function () {
+                $('.box-3').animate({ right: "100px" }, 500);
+            });
+
+            $('#left').click(function () {
+                $('.box-3').animate({ left: "100px" }, 500);
+            });
+
+            $('#big').click(function () {
+                $('.box-3').animate({ width: '150px', height: '150px' }, 500);
+            });
+            $('#small').click(function () {
+                $('.box-3').animate({ width: '50px', height: '50px' }, 500);
+            });
+            $('#bigsmall').click(function () {
+                $('.box-3').animate({ height: 'toggle' }, 500);
+            });
+            $('#changecolor').click(function () {
+                $('.box-3').css({
+                    "background-color": "yellow",
+                    "color": "white",
+                    "transition": "all .8s",
+                    "transform": "scale(1.5)",
+                });
+            });
+        });
+
+        // 最新消息
+        $(function () {
+            $('#btn3').click(function () {
+                $('.div-news1').slideToggle(500);
+            });
+            $('#btn4').click(function () {
+                $('.div-news2').slideToggle(500);
+            }); d
+        });
+
+
+        // 展開面板
+        $(function () {
+            $('#btn1').click(function () {
+                $('#panel').slideDown(500);
+            });
+            // 點面板收合
+            $('#panel').click(function () {
+                $(this).slideUp(500);
+            });
+            $('#btn2').click(function () {
+                $('#panel').slideToggle(500);
+            });
+        });
+        // 顯示與隱藏
+        $(function () {
+            $('#hide').click(function () {
+                $('#hideshow').hide(300);
+            });
+
+            $('#show').click(function () {
+                $('#hideshow').show(300);
+            });
+            // 預設"顯示&展開"
+            $('#toggle').click(function () {
+                $('#hideshow').toggle(300);
+            });
+        });
+
+
+        //第一種：標準法
+        $(document).ready((function () {
+            //程式撰寫區
+            $('p').click(function () {
+                // hide() =>不顯示
+                // this => 取得當前點擊元素
+                $(this).hide();
+            })
+        }));
+
+        // 簡寫法
+        $(function () {
+            // 程式撰寫區
+            $('h2').click(function () {
+                $(this).hide();
+            })
+        });
+
+    </script>
+
+</body>
+
+</html>
