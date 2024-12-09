@@ -25,13 +25,13 @@ $(document).ready(
 
         //置頂按鈕
         // 1. 偵測視窗卷軸有被捲動 -> 做下一步
-        // 2. 
+        // 2. 滾動超過 500 就顯示圖案，沒有則隱藏
+
         $(window).scroll(function () {
-            if($(this).scrollTop > 200){
-                $('#gotop').stop().fadeIn();
-            }else {
-                $('#gotop').stop().fadeOut();
+            if ($(this).scrollTop > 500) {
+                $('#gotop').stop.fadeIn('fast',1);
+            } else {
+                $('#gotop').stop.fadeOut('fast');
             }
         });
-
     });
