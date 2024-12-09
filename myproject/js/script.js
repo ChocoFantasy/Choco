@@ -28,10 +28,15 @@ $(document).ready(
         // 2. 滾動超過 500 就顯示圖案，沒有則隱藏
 
         $(window).scroll(function () {
-            if ($(this).scrollTop > 500) {
-                $('#gotop').stop.fadeIn('fast',1);
+            if ($(this).scrollTop() > 500) {
+                $('#gotop').stop().fadeTo('',1);
             } else {
-                $('#gotop').stop.fadeOut('fast');
+                $('#gotop').stop().fadeOut();
             }
         });
+
+        // 移除行動裝置的背景影片
+        if ($(window).width()<= 820){
+            $('#video-bg').remove();
+        }
     });
