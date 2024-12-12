@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jq套件- smoove 動態效果</title>
+
+    <!-- html檔案中的style一定是demo檔案用，不會套到你自己的專案中 -->
+    <style>
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            height: 100vh;
+            background-color: rgb(149,222,222);
+            font-size: 3rem;
+            color: white;
+        }
+
+        footer {
+            height: 300px;
+            background-color: rgb(149,222,222);
+            line-height: 300px;
+            text-align: center;
+        }
+
+        .row {
+            display: flex;
+        }
+
+        .row > div {
+            flex: 1;
+            height: 350px;
+            margin: 20px 10px;
+            background-color: rgb(149,198,182);
+        }
+    </style>
+</head>
+<body>
+    <header>BANNER</header>
+
+    <main>
+        <!-- 預設值：淡出淡入 -->
+        <div class="row">
+            <div class="smoove"></div>
+            <div class="smoove"></div>
+        </div>
+        <!-- 左右水平載入 -->
+        <div class="row">
+            <div class="smoove" data-move-x="-100%"></div>
+            <div class="smoove" data-move-x="-50%"></div>
+            <div class="smoove" data-move-x="50%"></div>
+        </div>
+        <!-- 旋轉載入 -->
+        <div class="row">
+            <div class="smoove" data-move-x="-100%" data-rotate="90deg"></div>
+            <div class="smoove" data-move-x="-50%" data-rotate="45deg" data-move-y="300px"></div>
+            <div class="smoove" data-move-x="50%" data-rotate="-90deg"></div>
+        </div>
+        <!-- 左右水平及垂直載入 -->
+        <div class="row">
+            <div class="smoove" data-move-x="-50%" data-move-y="100px"></div>
+            <div class="smoove" data-move-x="-25%" data-move-y="100px"></div>
+            <div class="smoove" data-move-x="25%"  data-move-y="100px"></div>
+            <div class="smoove" data-move-x="50%"  data-move-y="100px"></div>
+        </div>
+        
+        <!-- 翻轉載入 -->
+        <div class="row">
+            <div class="smoove" data-move-x="-150px" data-rotate-y="-90deg"></div>
+            <div class="smoove" data-move-x="150px" data-rotate-y="90deg"></div>
+        </div>
+
+        <!-- 透視載入 -->
+        <div class="row">
+            <div class="smoove-z"></div>
+            <div class="smoove-z"></div>
+            <div class="smoove-z"></div>
+            <div class="smoove-z"></div>
+            <div class="smoove-z"></div>
+        </div>
+    </main>
+
+    <footer>FOOTER</footer>
+    <!-- jquery 原生碼，一定要放在最上面 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    
+    <!-- jq smoove--動態載入效果 -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-smoove/0.2.10/jquery.smoove.min.js"></script>
+    
+    <!-- 啟用js套件，一定是放在套件檔案之後，必須先執行套件 -->
+    <script>
+        // 所有 .smoove 共用
+        $('.smoove').smoove({
+            // offset,整數不給單位且不加引號，% 要加引號"
+            offset:600,
+        });
+
+        $('.smoove-z').smoove({
+            moveZ:'-500px',
+            rotateX:'90deg',
+            moveY:'100px',
+        });
+
+
+    </script>
+</body>
+</html>

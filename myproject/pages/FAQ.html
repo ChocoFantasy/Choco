@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QA</title>
+    <style>
+        ul {
+            list-style: none;
+            width: 500px;
+            padding: 30px 0;
+            margin: 0 auto
+        }
+
+        .qa-title {
+            background: #b6a88e;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            cursor: pointer
+        }
+
+        .qa-title.on {
+            background: #9d8c6d
+        }
+
+        .qa-content {
+            display: none;
+            background: #fff;
+            padding: 20px;
+            border-radius: 6px;
+            margin: 8px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>
+            <div class="qa-title">What is Lorem Ipsum?</div>
+            <div class="qa-content">1+1=2</div>
+        </li>
+
+        <li>
+            <div class="qa-title">Why do we use it?</div>
+            <div class="qa-content">1+1=2</div>
+        </li>
+
+        <li>
+            <div class="qa-title">Why do we use it?</div>
+            <div class="qa-content">1+1=2</div>
+        </li>
+        <li>
+            <div class="qa-title">Why do we use it?</div>
+            <div class="qa-content">1+1=2</div>
+        </li>
+        <li>
+            <div class="qa-title">Why do we use it?</div>
+            <div class="qa-content">1+1=2</div>
+        </li>
+    </ul>
+    <!-- jQuery原生碼 CDN 一定要放在最上面，讓瀏覽器先讀jQuery,才抓得到定義的函式庫 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+
+        $(function () {
+            $(".qa-title").click(function () {
+
+                $(".qa-content").slideUp();
+
+                $(".qa-title.on").removeClass("on");
+
+                $(this).next().stop().slideDown();
+
+                $(this).stop().addClass("on");
+
+            });
+        })
+    </script>
+</body>
+
+</html>

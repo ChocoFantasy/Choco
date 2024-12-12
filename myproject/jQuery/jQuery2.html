@@ -4,9 +4,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>jQuery 各種應用</title>
     <!-- jQuery 原生碼 -->
     <script src="./jquery-3.7.1.min.js"></script>
+    <style>
+        #box-1,
+        #box-2 {
+            display: flex;
+        }
+
+        #box-1 .btn3 {
+            font-size: 16px;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            margin-top: 1px;
+            width: 30%;
+        }
+
+        #box-2 .btn4 {
+            font-size: 16px;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            margin-top: 1px;
+            width: 30%;
+        }
+
+        #box-1 .div-news1 {
+            display: none;
+            background-color: #333;
+            color: antiquewhite;
+            font-size: 14px;
+            height: 150px;
+            padding: 10px;
+        }
+
+        #box-2 .div-news2 {
+            display: none;
+            background-color: #333;
+            color: antiquewhite;
+            font-size: 14px;
+            height: 150px;
+            padding: 10px;
+        }
+
+        .box-3 {
+            width: 100px;
+            height: 100px;
+            margin-top: 30px;
+            background-color: blueviolet;
+            position: absolute;
+            /* 移動元素必須設定 position */
+            transform: scale(1.2);
+        }
+
+        .cssAnim1 {
+            border: 1px solid red;
+            width: 200px;
+            height: 200px;
+            display: block;
+            overflow: hidden;
+        }
+
+        .cssAnim1 img {
+            width: 100%;
+            transition: all .3s linear;
+        }
+
+        .cssAnim1:hover img{
+            transform: scale(1.5);
+        }
+
+        .imgScale img{
+            transform: scale(1.5);
+        }
+    </style>
+
 </head>
 
 <body>
@@ -38,73 +112,44 @@
         </div>
         <hr>
         <!-- animate -->
+        <div>
+            <button id="up">上</button>
+            <button id="down">下</button>
+            <button id="left">左</button>
+            <button id="right">右</button>
+            <button id="big">放大</button>
+            <button id="small">縮小</button>
+            <button id="bigsmall">常見問題</button>
+            <button id="changecolor">變色</button>
 
-        <button id="up">上</button>
-        <button id="down">下</button>
-        <button id="left">左</button>
-        <button id="right">右</button>
-        <button id="big">放大</button>
-        <button id="small">縮小</button>
-        <button id="bigsmall">常見問題</button>
-        <button id="changecolor">變色</button>
+            <div class="box-3">問題答案</div>
+        </div>
 
-        <div class="box-3">問題答案</div>
+        <br>
+        <div class="wrapper">
+            <p>動態新增刪除類別</p>
+            <ul>
+                <li>新增類別 => addClass()</li>
+                <li>移除類別 => removeClass()</li>
+            </ul>
+            <hr>
 
-        <style>
-            #box-1,
-            #box-2 {
-                display: flex;
-            }
+            <a href="#" class="cssAnim1">
+                <img src="./images/03.jpg" alt="">
+            </a>
+        </div>
 
-            #box-1 .btn3 {
-                font-size: 16px;
-                display: flex;
-                flex-direction: column;
-                cursor: pointer;
-                margin-top: 1px;
-                width: 30%;
-            }
-
-            #box-2 .btn4 {
-                font-size: 16px;
-                display: flex;
-                flex-direction: column;
-                cursor: pointer;
-                margin-top: 1px;
-                width: 30%;
-            }
-
-            #box-1 .div-news1 {
-                display: none;
-                background-color: #333;
-                color: antiquewhite;
-                font-size: 14px;
-                height: 150px;
-                padding: 10px;
-            }
-
-            #box-2 .div-news2 {
-                display: none;
-                background-color: #333;
-                color: antiquewhite;
-                font-size: 14px;
-                height: 150px;
-                padding: 10px;
-            }
-
-            .box-3 {
-                width: 100px;
-                height: 100px;
-                margin-top: 30px;
-                background-color: blueviolet;
-                position: absolute;
-                /* 移動元素必須設定 position */
-                transform: scale(1.2);
-            }
-        </style>
     </div>
 
     <script>
+        $(function(){
+            $('.cssAnim1').hover(function(){
+                $(this).addClass('imgScale');
+            },function(){
+                $(this).removeClass('imgScale');
+            })
+        });
+
         // 動畫:上下左右
         $(function () {
             $('#up').click(function () {
@@ -149,7 +194,7 @@
             });
             $('#btn4').click(function () {
                 $('.div-news2').slideToggle(500);
-            }); d
+            }); 
         });
 
 

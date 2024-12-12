@@ -1,35 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import $ from "jquery";
+import { useEffect } from "react";
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  // 寫法1:過
+
+  useEffect(()=>{
+    $('.cssAnim1').on('mouseover',function(){
+      $(this).addClass('imgScale');
+    })
+    $('.cssAnim1').on('mouseover',function(){
+      $(this).removeClass('imgScale');
+    })
+  },[])
 
   return (
     <>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        {/* <h2>jquery</h2>
+        {/* React 中不需要寫 jquery 的前面，已經有代替了 $(funtion) */}
+        {/* 記得家箭頭函式 */}
+        {/*<button onClick={() => {
+          console.log($('h2').text())
+        }}>Click</button> */}
+
+        <div>
+          <a href="#" className="cssAnim1">
+            <img src="./images/03.jpg" alt="" />
+          </a>
+        </div>
+
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

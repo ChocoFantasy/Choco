@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>瀑布流效果</title>
+    <style>
+        #container {
+            margin: auto; 
+            
+        }
+        .box {
+            width: 200px;
+            text-align: center;
+            border: 1px solid #ccc;
+            margin: 2px;
+        }
+
+        .box img{
+            width: 100%;
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="box">
+            <img src="../jQuery/images/image-1.jpg" alt="">
+            <p>PHOTO-1</p>
+        </div>
+        <div class="box">
+            <img src="../jQuery/images/image-2.jpg" alt="">
+            <p>PHOTO-2</p>
+        </div>
+        <div class="box">
+            <img src="../jQuery/images/05.jpg" alt="">
+            <p>PHOTO-3</p>
+        </div>
+        <div class="box">
+            <img src="../jQuery/images/image-3.jpg" alt="">
+            <p>PHOTO-4</p>
+        </div>
+        <div class="box">
+            <img src="../jQuery/images/07.jpg" alt="">
+            <p>PHOTO-5</p>
+        </div>
+        <div class="box">
+            <img src="../jQuery/images/image-4.jpg" alt="">
+            <p>PHOTO-6</p>
+        </div>
+        <div class="box">
+            <img src="../jQuery/images/03.jpg" alt="">
+            <p>PHOTO-7</p>
+        </div>
+    </div>
+
+    <script src="../jQuery/js/jquery-1.11.3.min.js"></script>
+    <script src="../jQuery/js/imagesloaded.pkgd.min.js"></script> <!-- loaded 狀態 -->
+    <script src="../jQuery/js/masonry.pkgd.min.js"></script> <!--瀑布流指令-->>
+
+    <script>
+        $(function(){
+            $('#container').imagesLoaded(function(){
+                $('#container').masonry({
+                    isFitWidth:true  
+                    // 左右留白，頁面置中
+                    // 需要搭配最外層設定，margin: auto; 
+                });
+            });
+        })
+    </script>
+</body>
+</html>

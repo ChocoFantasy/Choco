@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>輪播圖範例</title>
+    <style>
+        /* 第一款 */
+.box img {
+    width: 600px;
+    height: 450px;
+}
+
+.box {
+    width: 600px;
+    height: 450px;
+    position: relative;
+    /* 以這個box 為基準點 */
+}
+
+/* 輪播導覽列 */
+#nav {
+    position: absolute;
+    bottom: 10px;
+    right: 200px;
+    z-index: 10;
+}
+
+#nav a {
+    border-radius: 50%;
+    border: 1px solid rgb(211, 205, 141);
+    text-decoration: none;
+    font-size: 20px;
+    margin-left: 20px;
+    color: white;
+    display: inline-block;
+    /* a 是 行內元素不能調整寬高 */
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    line-height: 25px;
+}
+
+#nav a.activeSlide {
+    background-color: rgb(211, 205, 141);
+}
+
+/* 遮色區 */
+
+#mask {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .45);
+    z-index: 9;
+    width: 100%;
+    height: 50px;
+}
+
+/* 第二款 */
+
+#carousel img {
+    width: 150px;
+    height: 100px;
+    margin-right: 10px;
+    vertical-align: top;
+    /* 取消垂直排列可以取消圖片下方預設的留白區 */
+}
+
+/* 第三款  */
+
+.slideText {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 5.5em;
+}
+
+.slideText ul, .slideText li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+}
+    </style>
+</head>
+
+<body>
+    <p>第一款：輪播圖</p>
+    <div class="box">
+        <div id="imgCycle">
+            <img src="../jQuery/images/01.jpg" alt="">
+            <img src="../jQuery/images/03.jpg" alt="">
+            <img src="../jQuery/images/05.jpg" alt="">
+            <img src="../jQuery/images/06.jpg" alt="">
+            <img src="../jQuery/images/07.jpg" alt="">
+            <!-- <nav>輪播紐導覽列</nav> -->
+        </div>
+        <div id="mask"></div>
+    </div>
+
+    <p>第二款：輪播圖</p>
+    <div id="carousel">
+        <ul>
+            <li><img src="../jQuery/images/01.jpg" alt=""></li>
+            <li><img src="../jQuery/images/03.jpg" alt=""></li>
+            <li><img src="../jQuery/images/05.jpg" alt=""></li>
+            <li><img src="../jQuery/images/07.jpg" alt=""></li>
+            <li><img src="../jQuery/images/09.jpg" alt=""></li>
+        </ul>
+    </div>
+
+    <p>第三款：文字跑馬燈</p>
+
+    <div class="slideText">
+        <ul>
+            <li>News</li>
+            <li>News</li>
+            <li>News</li>
+            <li>News</li>
+            <li>News</li>
+            <li>News</li>
+            <li>News</li>
+            <li>News</li>
+            <li>News</li>
+            <li>News</li>
+        </ul>
+    </div>
+
+    <!-- 1. jQuery 原生碼 -->
+    <script src="../jQuery/js/jquery-1.11.3.min.js"></script>
+    <!-- 2. 載入輪播的主程式套件 -->
+    <script src="../jQuery/js/jquery.cycle.all.js"></script> <!-- 輪播圖 -->
+    <script src="../jQuery/js/jquery.jcarousellite.min.js"></script> <!-- 膠捲輪播圖 -->
+    <script src="../jQuery/js/jquery.textslider.min.js"></script> <!-- 文字跑馬燈 -->
+
+    <!-- 3. 撰寫自己的jQuery:驅動這些圖片可以輪播 -->
+    <script>
+        // 第一款：橫向正常輪播圖
+        $(function () {
+            // 預設為淡入淡出 fade
+            $('#imgCycle').after('<div id="nav"><div>').cycle({
+                fx: 'zoom',   // 輪播方式
+                sync: true,  // 有無前一張的殘影
+                delay: -2000,  // 第一次第一張圖停留時間
+                timeout: 500,  // 輪播速度
+                pager: '#nav' // 生成輪播的超連結
+            });
+        });
+
+        // 第二款:
+        $(function () {
+            $('#carousel').jCarouselLite({
+                auto: 2000, //多久時間輪播
+                speed: 1000, //輪播速度
+                scroll: 1,  //一次輪播的張數 (不寫的話，預設為一張)，建議 <= visible 的值
+                visible: 2, //看見的張數
+            });
+        });
+
+        // 第三款:文字跑馬燈
+        $(function () {
+            $('.slideText').textslider({
+                // 捲動方向(向上 => scrollUp, 向下 => scoreDown)
+                direction:'scrollUp',
+                // 一次捲動幾列<li>
+                scrollNum:5,
+                // 捲動速度 (ms)
+                scrollSpeed:500,
+                // 停頓時間 (ms)
+                pause:1000 
+            })
+        });
+    </script>
+</body>
+
+</html>

@@ -133,7 +133,7 @@
 
         <!-- 最新消息 -->
         <section id="news">
-            <header class="title">
+            <header class="title smoove">
                 <h2>NEWS</h2>
                 <h3>最新消息</h3>
             </header>
@@ -141,7 +141,7 @@
             <!-- 列表區 -->
             <div class="box-list">
                 <!-- article.item*3>a>(figure>img)+div.content>h2+p -->
-                <article class="item">
+                <article class="item smoove"  data-move-x="-100%" data-rotate="90deg">
                     <a href="#">
                         <figure><img src="../images/flowershop/pt_news1.jpg" alt=""></figure>
                         <div class="content">
@@ -155,7 +155,7 @@
                         </div>
                     </a>
                 </article>
-                <article class="item">
+                <article class="item smoove" data-move-x="-50%" data-rotate="45deg" data-move-y="300px">
                     <a href="#">
                         <figure><img src="../images/flowershop/pt_news2.jpg" alt=""></figure>
                         <div class="content">
@@ -171,7 +171,7 @@
                         </div>
                     </a>
                 </article>
-                <article class="item">
+                <article class="item smoove" data-move-x="50%" data-rotate="-90deg">
                     <a href="#">
                         <figure><img src="../images/flowershop/pt_news3.jpg" alt=""></figure>
                         <div class="content">
@@ -198,7 +198,7 @@
             <!-- ul.box-list>li.item*4>a>h2+p -->
             <!-- ul.box-list>li.item*4>a.content[href="#"]>h2{SERVICE TITLE}+p{lorem} -->
             <ul class="box-list">
-                <li class="item svc-1">
+                <li class="item svc-1 smoove" data-move-x="-50%" data-move-y="100px">
                     <a class="content" href="#">
                         <h2>SERVICE TITLE</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae rerum vel, animi, repellendus
@@ -206,7 +206,7 @@
                             possimus reiciendis sit veniam eum!</p>
                     </a>
                 </li>
-                <li class="item svc-2">
+                <li class="item svc-2 smoove" data-move-x="-25%" data-move-y="100px">
                     <a class="content" href="#">
                         <h2>SERVICE TITLE</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex modi numquam porro quos vel
@@ -214,7 +214,7 @@
                             repudiandae. Animi, dolor.</p>
                     </a>
                 </li>
-                <li class="item svc-3">
+                <li class="item svc-3 smoove" data-move-x="25%"  data-move-y="100px">
                     <a class="content" href="#">
                         <h2>SERVICE TITLE</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, optio atque aspernatur
@@ -222,7 +222,7 @@
                             voluptatibus. Ab sunt placeat laborum doloremque.</p>
                     </a>
                 </li>
-                <li class="item svc-4">
+                <li class="item svc-4 smoove" data-move-x="50%"  data-move-y="100px">
                     <a class="content" href="#">
                         <h2>SERVICE TITLE</h2>
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium nostrum cum, accusamus
@@ -237,7 +237,7 @@
         <!-- 關於我們 -->
         <section id="about">
             <!-- 浮動內容區 -->
-            <div>
+            <div class="smoove" data-move-z="-500px" data-rotate-x="90deg" data-move-y="100px">
                 <header class="title">
                     <h2>ABOUT</h2>
                     <h3>關於我們</h3>
@@ -329,25 +329,25 @@
         </section>
 
 
-        <section id="video">
+        <section id="video smoove">
             <header class="title">
                 <h2>VIDEO</h2>
                 <h3>相關影片</h3>
             </header>
             <!-- 影片區 -->
-            <div>
+            <div class="smoove" data-move-x="-150px" data-rotate-y="-90deg">
                 <video src="../images/flowershop/Planter.mp4" poster="../images/flowershop/cover.jpg" controls></video>
             </div>
         </section>
 
         <!-- 聯絡我們 -->
         <section id="contact">
-            <header class="title">
+            <header class="title smoove">
                 <h2>CONTACT</h2>
                 <h3>聯絡我們</h3>
             </header>
             <!-- 表單 -->
-            <form action="" method="post" name="contact-form" id="contact-form" title="聯絡我們表單">
+            <form class="smoove" data-move-x="100%" data-rotate-y="90deg" action="" method="post" name="contact-form" id="contact-form" title="聯絡我們表單">
                 <label for="username">*姓名：</label>
                 <input type="text" name="username" id="username" title="姓名" placeholder="請輸入姓名" required>
 
@@ -367,8 +367,8 @@
                 </button>
             </form>
             <!-- 裝飾花 -->
-            <figure class="flower_1"><img src="../images/flowershop/flower_1.png" alt="紅花"></figure>
-            <figure class="flower_2"><img src="../images/flowershop/flower_2.png" alt="白花"></figure>
+            <figure class="flower_1 smoove"><img src="../images/flowershop/flower_1.png" alt="紅花"></figure>
+            <figure class="flower_2 smoove"><img src="../images/flowershop/flower_2.png" alt="白花"></figure>
 
         </section>
     </main>
@@ -430,10 +430,15 @@
     </footer>
 
     <!-- jQuery原生碼 CDN 一定要放在最上面，讓瀏覽器先讀jQuery,才抓得到定義的函式庫 -->
+     <!-- 只能選一個版本套用，通常套新版本 -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <!-- 套件：換圖輪播js -->
     <script src="../js/carousel.js"></script>
+    <!-- jq smoove--動態載入效果 -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-smoove/0.2.10/jquery.smoove.min.js"></script>
+    <!-- 自訂的JQ，一定要放最下面，先執行上方語法最後在執行自訂語法 -->
     <script src="../js/script.js"></script>
+
 </body>
 
 </html>

@@ -4,6 +4,7 @@ $(document).ready(
         $('.hamburger').click(function () {
             $(this).toggleClass('is-active');
             $('.navigation').toggleClass('show');
+            console.log('Hamburger button clicked!');
         });
 
         // 指定 menu 滾動效果
@@ -39,4 +40,9 @@ $(document).ready(
         if ($(window).width()<= 820){
             $('#video-bg').remove();
         }
+    });
+
+    // 通常啟用jq獨立套件(獨立放在外面)
+    $('.smoove').smoove({
+        offset:250,
     });
