@@ -26,12 +26,6 @@
     padding-left: $interval-rem-l;
 
     /* 虛擬元素(裝飾) */
-    &::after {
-        content: 'NEWS';
-        margin-left: $interval-rem-s;
-        font-weight: 600;
-    }
-
     &::before {
         content: '';
         // 偽元素是行內元素，本身不支援寬高必須改變型態
@@ -64,15 +58,16 @@
             mask-size: 100% 100%;
             mask-repeat: no-repeat;
         }
-        .mask-1{
+
+        .mask-1 {
             mask-image: url(../images/blobs-1.svg);
         }
 
-        .mask-2{
+        .mask-2 {
             mask-image: url(../images/blobs-2.svg);
         }
 
-        .mask-3{
+        .mask-3 {
             mask-image: url(../images/blobs-3.svg);
         }
 
@@ -86,9 +81,9 @@
             background-color: $alpha-b-65;
             color: $light;
             opacity: 0;
-            transition:$speed-fast;
-           
-            &:hover {   
+            transition: $speed-fast;
+
+            &:hover {
                 opacity: 1;
             }
         }
@@ -101,4 +96,24 @@
     }
 }
 
+/* 英文標題區  */
+
 /* 最新商品區 */
+
+#news {
+    .heading {
+        &::after {
+            content: 'NEWS';
+        }
+    }
+}
+
+/* 熱門商品區 */
+
+#hot {
+    .heading {
+        &::after {
+            content: 'HOT';
+        }
+    }
+}
