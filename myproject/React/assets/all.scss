@@ -3,3 +3,31 @@ $primary-bg:rgb(195,238,255);
 body{
     background-color: $primary-bg;
 }
+
+/* Aos套件 測試用方塊 */
+.box {
+    width: 300px;
+    height: 200px;
+    background-color: #333;
+    color: #333;
+}
+a{
+    // 底線標籤
+    text-decoration: underline; 
+    color: red;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+#ttpPanel{
+    padding: 15px;
+    width: 200px;
+    text-align: left;
+    border: 3px solid blue;
+    // 避免重疊用
+    position: absolute;
+    z-index: 99;
+    background-color: #fff;
+    display: none; // 記得設定這個不然會跑出範例
+}

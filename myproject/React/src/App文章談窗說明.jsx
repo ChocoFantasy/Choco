@@ -12,7 +12,7 @@ function App() {
     // 淡入 => fadeIn()
     // 淡出 => fadeOut()
     // 速度 => 毫秒() => (slow,normal,fast)
-    
+    // jQuery
     $("a:has(.ttpShow)").on('mouseover',function (e) {
             $("body").append('<div id="ttpPanel"' + $(this).children(".ttpShow").html() + "</div>");
             $("#ttpPanel").css({
@@ -35,7 +35,7 @@ function App() {
   //   過時寫法
   //   $("a:has(.ttpShow)").mouseover(function (e) {
   //       $("body").append(
-  //         '<div id="ttpPanel"' + $(this).children(".ttpShow").html() + "</div>"
+  //         '<div id="ttpPanel">' + $(this).children(".ttpShow").html() + "</div>"
   //       );
   //       $("#ttpPanel").css({
   //           top: e.pageY + 10 + "px",
@@ -60,7 +60,7 @@ function App() {
         Lorem ipsum dolor sit,
         <a href="#">
           consectetur
-          <span id="ttpPanel" className="ttpShow">
+          <span  className="ttpShow">
             consectetur內容說明：
           </span>
         </a>
@@ -69,7 +69,7 @@ function App() {
         necessitatibus
         <a href="#">
           atque
-          <span id="ttpPanel" className="ttpShow">
+          <span  className="ttpShow">
             <img src="../images/flowershop/pt_news1.jpg" alt="花店最新消息" style={{
               width:'100px'
             }} />
