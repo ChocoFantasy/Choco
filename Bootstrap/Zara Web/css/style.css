@@ -55,6 +55,9 @@
 .list .item .mask-3 {
   mask-image: url(../images/blobs-3.svg);
 }
+.list .item .clip {
+  clip-path: circle(50%);
+}
 .list .item h3 {
   position: absolute;
   width: 100%;

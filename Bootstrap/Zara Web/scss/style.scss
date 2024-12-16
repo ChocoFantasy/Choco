@@ -71,6 +71,11 @@
             mask-image: url(../images/blobs-3.svg);
         }
 
+        //剪裁遮色片
+        .clip {
+            clip-path: circle(50%);
+        }
+
         h3 {
             position: absolute;
             width: 100%;
