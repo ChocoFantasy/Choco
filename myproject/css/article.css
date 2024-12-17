@@ -1,0 +1,115 @@
+/* 全頁面背景設定 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+  
+  /* 撰寫文章視窗的背景遮罩 */
+  #postModal {
+    display: none; /* 預設隱藏 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex; /* 修正顯示時要用 flex 排版 */
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* 視窗內容 */
+  .modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left;
+  }
+  
+  /* 關閉按鈕 */
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    color: #aaa;
+    cursor: pointer;
+  }
+  
+  .close-btn:hover {
+    color: #000;
+  }
+  
+  /* 帳號與頭像 */
+  .user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .user-info .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  #userName {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  /* 下拉選單 */
+  #boardSelect {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 15px;
+    font-size: 14px;
+  }
+  
+  /* 標題和文章內容 */
+  #postTitle,
+  #postContent {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 8px;
+    font-size: 14px;
+    box-sizing: border-box;
+  }
+  
+  #postContent {
+    height: 120px;
+    resize: none;
+  }
+  
+  /* 插入按鈕 */
+  .media-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
+  
+  button {
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .action-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  

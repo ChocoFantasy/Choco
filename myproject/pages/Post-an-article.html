@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>撰寫文章視窗</title>
+  <link rel="stylesheet" href="../css/article.css" />
+</head>
+<body>
+  <!-- 外部圖片按鈕：開啟撰寫文章視窗 -->
+  <img src="../images/flowershop/icon-fb.png" id="openPostBtn" alt="撰寫文章" style="cursor: pointer; width: 50px;" />
+
+  <!-- 撰寫文章視窗 -->
+  <div id="postModal">
+    <div class="modal-content">
+      <!-- 視窗關閉按鈕 -->
+      <span class="close-btn" id="closeModal">&times;</span>
+
+      <!-- 顯示帳號和頭像 -->
+      <div class="user-info">
+        <img src="avatar.png" alt="頭像" class="avatar" />
+        <span id="userName">您的帳號名稱</span>
+      </div>
+
+      <!-- 選擇分類看板 -->
+      <label for="boardSelect">選擇分類看板：</label>
+      <select id="boardSelect">
+        <option value="general">綜合</option>
+        <option value="news">新聞</option>
+        <option value="entertainment">娛樂</option>
+        <option value="tech">科技</option>
+      </select>
+
+      <!-- 文章標題 -->
+      <input type="text" id="postTitle" placeholder="請輸入標題" />
+
+      <!-- 文章文字區塊 -->
+      <textarea id="postContent" placeholder="撰寫您的文章內容..."></textarea>
+
+      <!-- 插入圖片和影片按鈕 -->
+      <div class="media-buttons">
+        <button id="insertImage">插入圖片</button>
+        <button id="insertVideo">插入影片</button>
+      </div>
+
+      <!-- 送出和取消按鈕 -->
+      <div class="action-buttons">
+        <button id="cancelPost">取消</button>
+        <button id="submitPost">送出</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/article.js"></script>
+</body>
+</html>
