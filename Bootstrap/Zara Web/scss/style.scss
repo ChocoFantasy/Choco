@@ -16,6 +16,50 @@
 
 }
 
+.navbar {
+    position: sticky;
+    left: 0;
+    top: 0;
+    z-index: $z-index-l;
+    height: 65px;
+    .navbar-brand {
+        display: block;
+        width: 100px;
+        //height:40px
+    }
+    .btn-w {
+        width: 5rem;
+    }
+
+    .icon {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        align-items: center;
+        
+        a {
+            margin: 0 0.5rem;
+            color:$light;
+            font-size: $font-size-xl;
+            &:hover{
+                color:rgb(100,200,1);
+            }
+        }
+
+        li{
+            margin: 5px;
+            color:$light;
+            font-size: $font-size-xl;
+            &:hover{
+                color:rgb(100,200,1);
+            }
+        }
+
+    }
+}
+/* 主要內容共用區  */
+
+
 /* 最新消息區 */
 .heading {
     position: relative;
@@ -73,7 +117,10 @@
 
         //剪裁遮色片
         .clip {
+            display: block;
             clip-path: circle(50%);
+            clip-path: polygon(80%,30%,50% 0,6% 5%,10% 50%,0 100%,100% 100%);
+            // clip-path:ellipe (40% 48% at 50% 50%)
         }
 
         h3 {
@@ -102,10 +149,10 @@
 }
 
 /* 英文標題區  */
-
 /* 最新商品區 */
 
 #news {
+    padding-top: 65px;
     .heading {
         &::after {
             content: 'NEWS';
@@ -116,9 +163,24 @@
 /* 熱門商品區 */
 
 #hot {
+    padding-top: 65px;
     .heading {
         &::after {
             content: 'HOT';
         }
     }
+}
+
+#woman {
+    .heading {
+        &::after{
+            content: 'ALL';
+        }
+    }
+}
+
+footer {
+    height: 10vh;
+    line-height: 10vh;
+    text-align: center;
 }

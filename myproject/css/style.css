@@ -654,10 +654,10 @@ footer #gotop {
   position: fixed;
   right: 20px;
   bottom: 20px;
-  z-index: 999;
+  z-index: 9999;
   width: 50px;
   height: 50px;
-  background-color: #c09e9f;
+  background-color: red;
   border-radius: 50%;
   cursor: pointer;
 }/*# sourceMappingURL=style.css.map */
