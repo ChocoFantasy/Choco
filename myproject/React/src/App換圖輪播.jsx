@@ -7,10 +7,10 @@ function App() {
 
   // 建立輪播圖片的陣列物件
   const slides = [
-    { url: "./images2/06.jpg)" },
-    { url: "./images2/07.jpg)" },
-    { url: "./images2/08.jpg)" },
-    { url: "./images2/09.jpg)" },
+    { url: "./images2/06.jpg)",title:"photo-1" },
+    { url: "./images2/07.jpg)",title:"photo-2" },
+    { url: "./images2/08.jpg)",title:"photo-3" },
+    { url: "./images2/09.jpg)",title:"photo-4" },
   ];
 
   useEffect(() => {
