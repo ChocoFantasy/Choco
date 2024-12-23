@@ -22,11 +22,13 @@
     top: 0;
     z-index: $z-index-l;
     height: 65px;
+
     .navbar-brand {
         display: block;
         width: 100px;
         //height:40px
     }
+
     .btn-w {
         width: 5rem;
     }
@@ -36,27 +38,30 @@
         display: flex;
         margin: 0;
         align-items: center;
-        
+
         a {
             margin: 0 0.5rem;
-            color:$light;
+            color: $light;
             font-size: $font-size-xl;
-            &:hover{
-                color:rgb(100,200,1);
+
+            &:hover {
+                color: rgb(100, 200, 1);
             }
         }
 
-        li{
+        li {
             margin: 5px;
-            color:$light;
+            color: $light;
             font-size: $font-size-xl;
-            &:hover{
-                color:rgb(100,200,1);
+
+            &:hover {
+                color: rgb(100, 200, 1);
             }
         }
 
     }
 }
+
 /* 主要內容共用區  */
 img {
     display: block;
@@ -122,7 +127,7 @@ img {
         .clip {
             display: block;
             clip-path: circle(50%);
-            clip-path: polygon(80%,30%,50% 0,6% 5%,10% 50%,0 100%,100% 100%);
+            clip-path: polygon(80%, 30%, 50% 0, 6% 5%, 10% 50%, 0 100%, 100% 100%);
             // clip-path:ellipe (40% 48% at 50% 50%)
         }
 
@@ -156,6 +161,7 @@ img {
 
 #news {
     padding-top: 65px;
+
     .heading {
         &::after {
             content: 'NEWS';
@@ -167,6 +173,7 @@ img {
 
 #hot {
     padding-top: 65px;
+
     .heading {
         &::after {
             content: 'HOT';
@@ -176,20 +183,23 @@ img {
 
 #woman {
     .heading {
-        &::after{
+        &::after {
             content: 'ALL';
         }
     }
+
     .content {
         h3 {
             font-size: $font-size-l;
         }
+
         p {
             del {
-                font-size:$font-size-xs;
+                font-size: $font-size-xs;
                 color: $deep;
                 padding-right: $interval-s;
             }
+
             font-size: $font-size-s;
             color: $lesser-4;
             font-weight: $font-w-bold;
@@ -199,27 +209,43 @@ img {
     }
 
 }
+
 // 商品詳情頁
-#productpage{
-    .heading{
-        &::before{
+#productpage {
+    .heading {
+        &::before {
             content: '';
             display: none;
         }
     }
+
     .pd-row {
         display: flex;
-        > div {
-            flex:1;
-            margin:$interval-xxl;
+
+        >div {
+            flex: 1;
+            margin: $interval-xxl;
         }
 
-        #tabs{
-            ul{
+        #tabs {
+
+            ul {
                 display: flex;
             }
         }
     }
+}
+
+// jQuery ui tabs
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active,
+a.ui-button:active,
+.ui-button:active,
+.ui-button.ui-state-active:hover {
+    display: flex;
+    border: 1px solid $deep;
+    background: transparent;
 }
 
 footer {
