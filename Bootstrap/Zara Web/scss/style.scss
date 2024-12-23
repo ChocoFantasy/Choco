@@ -58,7 +58,10 @@
     }
 }
 /* 主要內容共用區  */
-
+img {
+    display: block;
+    width: 100%;
+}
 
 /* 最新消息區 */
 .heading {
@@ -175,6 +178,46 @@
     .heading {
         &::after{
             content: 'ALL';
+        }
+    }
+    .content {
+        h3 {
+            font-size: $font-size-l;
+        }
+        p {
+            del {
+                font-size:$font-size-xs;
+                color: $deep;
+                padding-right: $interval-s;
+            }
+            font-size: $font-size-s;
+            color: $lesser-4;
+            font-weight: $font-w-bold;
+        }
+
+
+    }
+
+}
+// 商品詳情頁
+#productpage{
+    .heading{
+        &::before{
+            content: '';
+            display: none;
+        }
+    }
+    .pd-row {
+        display: flex;
+        > div {
+            flex:1;
+            margin:$interval-xxl;
+        }
+
+        #tabs{
+            ul{
+                display: flex;
+            }
         }
     }
 }

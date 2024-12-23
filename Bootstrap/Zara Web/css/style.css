@@ -47,6 +47,11 @@
 }
 
 /* 主要內容共用區  */
+img {
+  display: block;
+  width: 100%;
+}
+
 /* 最新消息區 */
 .heading {
   position: relative;
@@ -137,6 +142,34 @@
 
 #woman .heading::after {
   content: "ALL";
+}
+#woman .content h3 {
+  font-size: 1.2rem;
+}
+#woman .content p {
+  font-size: 0.85rem;
+  color: #8f6b6b;
+  font-weight: 600;
+}
+#woman .content p del {
+  font-size: 0.8rem;
+  color: #444;
+  padding-right: 10px;
+}
+
+#productpage .heading::before {
+  content: "";
+  display: none;
+}
+#productpage .pd-row {
+  display: flex;
+}
+#productpage .pd-row > div {
+  flex: 1;
+  margin: 50px;
+}
+#productpage .pd-row #tabs ul {
+  display: flex;
 }
 
 footer {

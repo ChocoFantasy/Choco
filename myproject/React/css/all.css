@@ -28,4 +28,10 @@ a:hover {
   z-index: 99;
   background-color: #fff;
   display: none;
+}
+
+.wrapper2 {
+  max-width: 100vw;
+  height: 100vh;
+  margin: auto;
 }/*# sourceMappingURL=all.css.map */
