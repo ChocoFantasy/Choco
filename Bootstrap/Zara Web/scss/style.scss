@@ -248,6 +248,10 @@ a.ui-button:active,
     background: transparent;
 }
 
+.ul-tabs .ui-tabs-nav .ui-tabs-anchor{
+    padding: 0;
+}
+
 footer {
     height: 10vh;
     line-height: 10vh;
