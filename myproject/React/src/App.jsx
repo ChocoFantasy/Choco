@@ -1,53 +1,107 @@
-import { useEffect, useState } from "react";
-import "../assets/all.scss";
+import {motion} from "motion/react"
 
 function App() {
-  // 建立目前背景圖的變數
-  const [currentImgIndex, setCurrentImgIndex] = useState(0);
-
-  // 建立輪播圖片的陣列物件
-  const slides = [
-    { url: "./images2/06.jpg)",title:"photo-1" },
-    { url: "./images2/07.jpg)",title:"photo-2" },
-    { url: "./images2/08.jpg)",title:"photo-3" },
-    { url: "./images2/09.jpg)",title:"photo-4" },
-  ];
-
-  useEffect(() => {
-    // 每 3 秒呼叫 nextSlide() 換下一張圖
-    const autoplay = setInterval(() => {
-      nextSlide();
-    }, 3000);
-
-    return () => clearInterval(autoplay);
-  }, [currentImgIndex]);
-
-  // 下一張
-  const nextSlide = () => {
-    setCurrentImgIndex(
-      (prevIndex) => (prevIndex === slides.length - 1 ? 0 : prevIndex + 1)
-      // 取得前一張的索引編號，檢查是否為最後一個編號
-      // 是 => 回到第一張
-      // 否 => 跳到下一張
-    );
-  };
+// 摺疊資料
+const questions = [
+  {
+    id:1,
+    questions:"題目1",
+    answer:"答案1",
+  },
+  {
+    id:2,
+    questions:"題目2",
+    answer:"答案2",
+  },
+  {
+    id:3,
+    questions:"題目3",
+    answer:"答案3",
+  },
+] 
 
   return (
     <>
-      {/* 最外層 */}
-      <div className="wrapper2">
-        {/* 背景輪播區 */}
-        <div
-          style={{
-            backgroundImage: `url(${slides[currentImgIndex].url})`,
-            backgroundSize: "cover", //塞滿
-            backgroundPosition: "center",
-            width: "100%",
-            height: "100%",
-            margin: "auto",
-          }}
-        ></div>
+    <div className="wrapper style={}" style={{
+      backgroundColor:"black",
+      maxWidth:"100vw",
+      height:"100vh",
+      display:"flex",
+      justifyContent:"center",
+      color:"#ccc",
+    }}>
+      {/* FAQ 區 */}
+      <div className="faq" style={{
+        backgroundColor:"gray",
+        width:"80%",
+        padding:"8px",
+        borderRadius:"5px",
+      }}>
+        {/* 主標題 */}
+        <h2 style={{
+          textAlign:"center",
+          marginBottom:"10px",
+        }}> FAQ 列表</h2>
+        {
+          // 帶出陣列資料
+          questions.map((q)=>{
+            return(
+              <div key={q.id} style={{marginBottom:"5px"}}>
+                {/* QA按鈕 */}
+                <button style={{
+                  width:"100%",
+                  textAlign:"left",
+                  borderRadius:"2px",
+                  border:"none",
+                  outline:"none",
+                  padding:"10px",
+                  display:"flex",
+                  justifyContent:"space-between",
+                  alignItems:"center",
+                  fontSize:"20px",
+                }}
+                onClick={()=>setActiveQuestionId(activeQuestionId === q.id?null:q.id)}
+                >
+
+                   {/* 帶出題目 */}
+                   {q.question}
+
+                   {/* icon 加減號 */}
+                  {
+                    activeQuestionId === q.id ? <FaMinusCircle /> : <FaPlusCircle />
+                  }
+                   <FaPlusCircle />
+                   <FaMinusCircle />
+                </button>
+                {/* 摺疊紐動畫 motion => https://motion.dev/docs/react-quick-stark */}
+                <AnimetePresence>
+                  {
+                    // 作用中的id跟被展開的id相同時
+                    activeQuestionId === q.id && (
+                      <motion.div
+                      // 初始化
+                      initial={{opacity:0,height:0}}
+                      // 展開動畫
+                      animate={{opacity:1,height:"auto"}}
+                      // 外觀樣式
+                      style={{marginTop:"5px",color:"white",fontSize:"18px"}}
+                      // 摺疊動畫
+                      exit={{opacity:0,height:0}}
+
+                      >
+                        {/* 答案 */}
+                        {q.answer}
+                      </motion.div>
+                    )
+                  }
+                </AnimetePresence>
+              </div>
+            )
+          })
+        }
       </div>
+    </div>
+    <div>Accordion</div>
     </>
   );
 }
