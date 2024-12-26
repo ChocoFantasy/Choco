@@ -641,3 +641,18 @@ footer {
         cursor: pointer;
     }
 }
+
+#Nintendo {
+    #topbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+    #banner {
+        height: 100vh;
+        background-image: url('../images/mario/bg-pattern-logos.png'); // 確保路徑正確
+    }
+    footer {
+        background-color: red;
+    }
+}

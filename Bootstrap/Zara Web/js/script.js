@@ -12,8 +12,13 @@ $(function () {
             $(this).attr('src', hoverSrc);
         }
     )
+    // jQuery UI tabs
+    $("#tabs").tabs();
+
 });
 
-// jQuery UI tabs
-$("#tabs").tabs();
+// 環繞功能，有需要改lightbox，option 修改功能選項，不需要寫在 $(function () 內
+lightbox.option({
+    'wrapAround': true
+})
 

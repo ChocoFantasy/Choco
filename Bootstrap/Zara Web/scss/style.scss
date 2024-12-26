@@ -233,6 +233,27 @@ img {
                 display: flex;
             }
         }
+
+        .detail {
+            h2 {
+                display: inline-block;
+                font-weight: $font-w-bold;
+                background-color: $deep;
+                color: $light;
+                padding: $interval-s;
+                box-shadow: 5px 5px 0 red;
+            }
+            data {
+                font-size: $font-size-s;
+                display: block;
+                margin: $interval-y-s;
+            }
+            mark {
+                background-color: $primary;
+                -left:$interval-s;
+            }
+            
+        }
     }
 }
 

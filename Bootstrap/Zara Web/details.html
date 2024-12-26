@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="./webfonts/all.min.css">
     <!-- jquery UI CDN -->
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+    <!-- js lightbox 套件 -->
+    <link href="./css/lightbox.css" rel="stylesheet" />
     <!-- 自訂的 Css 放這裡 -->
     <link rel="stylesheet" href="./css/style.css">
 </head>
@@ -28,6 +30,7 @@
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
             <!-- 主選單 -->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -82,41 +85,73 @@
     <main class="container">
         <section id="productpage">
             <!-- 產品名稱 -->
-             <header class="heading">
+            <header class="heading">
                 <h2>ProductNameProductName</h2>
-             </header>
+            </header>
             <!-- 產品規格區 -->
             <div class="pd-row">
                 <!-- 頁籤相簿 -->
                 <div id="tabs">
                     <!-- 內容 -->
-                    <div id="tabs-1">
-                        <img src="./images/accessories/thumbs/accessories1_s.jpg" alt="">
+                    <div id="tabs-1" class="photo">
+                        <a href="./images/accessories/accessories1.jpg" data-lightbox="lightbox" data-title="product1" data-alt="product1">
+                            <img src="./images/accessories/thumbs/accessories1_s.jpg" alt="product1">
+                        </a>
                     </div>
-                    <div id="tabs-2">
-                        <img src="./images/accessories/thumbs/accessories2_s.jpg" alt="">
+                    <div id="tabs-2" class="photo">
+                        <a href="./images/accessories/accessories2.jpg" data-lightbox="lightbox" data-title="product2" data-alt="product2">
+                            <img src="./images/accessories/thumbs/accessories2_s.jpg" alt="product2">
+                        </a>
                     </div>
                     <div id="tabs-3">
-                        <img src="./images/accessories/thumbs/accessories3_s.jpg" alt="">
+                        <a href="./images/accessories/accessories3.jpg" data-lightbox="lightbox" data-title="product3" data-alt="product3">
+                            <img src="./images/accessories/thumbs/accessories3_s.jpg" alt="product3">
+                        </a>
                     </div>
                     <div id="tabs-4">
-                        <img src="./images/accessories/thumbs/accessories4_s.jpg" alt="">
+                        <a href="./images/accessories/accessories4.jpg" data-lightbox="lightbox" data-title="product4" data-alt="product4">
+                            <img src="./images/accessories/thumbs/accessories4_s.jpg" alt="product4">
+                        </a>
                     </div>
                     <div id="tabs-5">
-                        <img src="./images/accessories/thumbs/accessories5_s.jpg" alt="">
+                        <a href="./images/accessories/accessories5.jpg" data-lightbox="lightbox" data-title="product5" data-alt="product5">
+                            <img src="./images/accessories/thumbs/accessories5_s.jpg" alt="product5">
+                        </a>
                     </div>
                     <!-- 頁籤 -->
                     <ul>
                         <li><a href="#tabs-1"><img src="./images/accessories/thumbs/accessories1_s.jpg" alt=""></a></li>
+
                         <li><a href="#tabs-2"><img src="./images/accessories/thumbs/accessories2_s.jpg" alt=""></a></li>
+
                         <li><a href="#tabs-3"><img src="./images/accessories/thumbs/accessories3_s.jpg" alt=""></a></li>
+
                         <li><a href="#tabs-4"><img src="./images/accessories/thumbs/accessories4_s.jpg" alt=""></a></li>
+
                         <li><a href="#tabs-5"><img src="./images/accessories/thumbs/accessories5_s.jpg" alt=""></a></li>
                     </ul>
                 </div>
                 <!-- 產品規格 -->
                 <div class="detail">
-                    右邊規格區Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, unde. Illum fuga, modi pariatur tenetur iste atque autem non odit eaque, corrupti, et at hic facere numquam exercitationem eligendi distinctio!,
+                   <h2>珍珠頸鍊</h2>
+                   <data value="No. p01856163">多色｜　1856/163</data>
+
+                   <div class="price">
+                    <s>NT$ 1,490</s>
+                    <mark>-33% NT$ 990</mark>
+                   </div>
+
+                   <p>多層頸鍊;搭配人造珍珠和彩色珠飾鑲飾;龍蝦扣固定。</p>
+
+                   <details>
+                    <summary>材質</summary>
+<pre>
+75% 亞克力纖維
+10% 鋅
+5%  聚酯纖維
+5%  鐵
+</pre>
+                   </details>
                 </div>
             </div>
             <!-- 產品內容排版區 -->
@@ -135,6 +170,8 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <!-- jquery UI jS CDN -->
     <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <!-- jquery lightbox CDN -->
+    <script src="./js/lightbox.js"></script>
     <!-- 自訂的js -->
     <script src="./js/script.js"></script>
 </body>

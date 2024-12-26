@@ -660,4 +660,17 @@ footer #gotop {
   background-color: red;
   border-radius: 50%;
   cursor: pointer;
+}
+
+#Nintendo #topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+#Nintendo #banner {
+  height: 100vh;
+  background-image: url("../images/mario/bg-pattern-logos.png");
+}
+#Nintendo footer {
+  background-color: red;
 }/*# sourceMappingURL=style.css.map */
