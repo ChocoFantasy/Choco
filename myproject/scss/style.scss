@@ -643,6 +643,9 @@ footer {
 }
 
 #Nintendo {
+    .main-btn {
+        align-self: flex-start;
+    }
     #topbar {
         position: fixed;
         top: 0;
@@ -652,6 +655,14 @@ footer {
         height: 100vh;
         background-image: url('../images/mario/bg-pattern-logos.png'); // 確保路徑正確
     }
+
+    h1{
+        font
+    }
+    p {
+
+    }
+ 
     footer {
         background-color: red;
     }

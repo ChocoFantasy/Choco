@@ -1,25 +1,142 @@
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
+
 <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="icon" href="../images/mario/favicon.png">
-     <link rel="stylesheet" href="../css/style.css">
-     <title>瑪莉歐動態網站</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Mario</title>
+    <link rel="icon" href="favicon-32x32.png">
+    <link rel="stylesheet" href="scss/style.css">
 </head>
+
 <body>
-     <main id="Nintendo">
-          <header id="topbar">Nintendo</header>
-          <section id="banner">
-               <div class="content">
-                    <h1><span>Official home of</span>Mario</h1>
-                    <p>If you’re a Mario fan—or even if you’ve just found out about him today—you’ve come to the right place! Learn everything there is to know about that multitalented, mustached marvel, and check out the latest news, videos, and more.</p>
-                    <a href="#">Meet Mario!</a>
-               </div>
-          </section>
-          <footer>
-               copyright &copy; 2024 Super Mario.
-          </footer>
-     </main>
+    <header id="banner">
+        <div class="row">
+            <div class="col">
+                <h2>
+                    <span>Official home of</span>
+                    <span>Mario</span>
+                </h2>
+                <p>If you’re a Mario fan—or even if you’ve just found out about him today—you’ve come to the right
+                    place! Learn everything there is to know about that multitalented, mustached marvel, and check out
+                    the latest news, videos, and more.
+                </p>
+                <a class="btn" href="#">Meet Mario! ></a>
+            </div>
+            <div class="col">
+                <div class="banner-1">
+                    <picture class="brick"><img src="images/banner1-brick-row.png" alt=""></picture>
+                    <picture class="luigi"><img src="images/banner1-luigi.png" alt=""></picture>
+                    <picture class="mario1"><img src="images/banner1-mario.png" alt=""></picture>
+                </div>
+                <div class="banner-2">
+                    <picture class="pipe"><img src="images/banner2-pipe.png" alt=""></picture>
+                    <picture class="peach"><img src="images/banner2-peach.png" alt=""></picture>
+                    <picture class="mario2"><img src="images/banner2-mario.png" alt=""></picture>
+                </div>
+                <div class="banner-3">
+                    <picture class="star"><img src="images/banner3-star.png" alt=""></picture>
+                    <picture class="toad"><img src="images/banner3-toad.png" alt=""></picture>
+                    <picture class="mario3"><img src="images/banner3-mario.png" alt=""></picture>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section id="news">
+            <h2 class="title1">Mario in the news</h2>
+            <div class="list-box">
+                <div class="card-item">
+                    <figure class="scenes">
+                        <img src="images/scenes_1.jpg" alt="">
+                    </figure>
+                    <figure class="role">
+                        <img src="images/characters-1.png" alt="">
+                    </figure>
+                    <p class="date">May 19, 2023</p>
+                    <h3 class="title2">Race newly added course GCN Mushroom</h3>
+                    <div class="content">
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio repudiandae dolores similique
+                            nobis! Facere, dolorem placeat laborum enim error iste nihil optio, dicta sunt provident
+                            deserunt possimus magni aliquam sequi.</p>
+                    </div>
+                </div>
+                <div class="card-item">
+                    <figure class="scenes">
+                        <img src="images/scenes_2.jpg" alt="">
+                    </figure>
+                    <figure class="role">
+                        <img src="images/characters-2.png" alt="">
+                    </figure>
+                    <p class="date">May 6, 2023</p>
+                    <h3 class="title2">Have a smashing time in the Bowser Tour</h3>
+                    <p class="content">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio repudiandae dolores similique
+                        nobis! Facere, dolorem placeat laborum enim error iste nihil optio, dicta sunt provident
+                        deserunt possimus magni aliquam sequi.
+                </div>
+            </div>
+            </div>
+            <a class="btn" href="#">See more news ></a>
+        </section>
+        <section id="product">
+            <!-- <figure><img src="images/wavy-line.svg" alt=""></figure> -->
+            <h2 class="title1">Mario on Nintendo Switch</h2>
+            <div class="list-box">
+                <div class="card-item1">
+                    <div class="point-t"></div>
+                    <div class="point-b"></div>
+                    <div class="role"><img src="images/mario_1.png" alt=""></div>
+                    <div class="contant">
+                        <h2>Mario Kart™ 8 Deluxe</h2>
+                        <p>Race with Mario and friends anytime, anywhere!</p>
+                        <a class="btn" href="">See the timeline ></a>
+                    </div>
+                </div>
+                <div class="card-item2">
+                    <div class="point-t"></div>
+                    <div class="point-b"></div>
+                    <div class="role"><img src="images/mario_2.png" alt=""></div>
+                    <div class="contant">
+                        <h2>Mario Kart™ 8 Deluxe</h2>
+                        <p>Race with Mario and friends anytime, anywhere!</p>
+                        <a class="btn" href="">See the timeline ></a>
+                    </div>
+                </div>
+                <div class="card-item3">
+                    <div class="point-t"></div>
+                    <div class="point-b"></div>
+                    <div class="role"><img src="images/mario_3.png" alt=""></div>
+                    <div class="contant">
+                        <h2>Mario Kart™ 8 Deluxe</h2>
+                        <p>Race with Mario and friends anytime, anywhere!</p>
+                        <a class="btn" href="">See the timeline ></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer><small>Nintendo properties are trademarks of Nintendo. © 2020 Nintendo.</small></footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    <script>
+        // 初始化 傾斜透視元素
+        VanillaTilt.init(document.querySelector(".card-item1"), {
+            max: 25,/* 最大傾斜角度 */
+            speed: 400 /* 傾斜變化速度 */
+        });
+        VanillaTilt.init(document.querySelector(".card-item2"), {
+            max: 25,
+            speed: 400
+        });
+
+        VanillaTilt.init(document.querySelector(".card-item3"), {
+            max: 25,
+            speed: 400
+        });
+
+    </script>
 </body>
+
 </html>
