@@ -46,7 +46,10 @@ export default function App() {
     return (
         <>
             <div style={{ display: "flex", flexWrap: "wrap" }}>
+                <SearchBox  onSearchHandler={onSearchHandler} filterString={filterString}/>
+                <div style={{display:"flex",flexWrap:"wrap"}}>
                 <ShowPhoto />
+                </div>
             </div>
         </>
     )
